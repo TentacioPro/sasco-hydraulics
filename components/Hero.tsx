@@ -1,82 +1,86 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { siteContent, siteImages } from '../src/data/content';
 
 const Hero: React.FC = () => {
+  const { hero } = siteContent;
+
   return (
     <>
       {/* Breadcrumb / Status Bar */}
-      <div className="border-b border-border-slate bg-slate-50 dark:bg-zinc-900 px-6 lg:px-12 py-2 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-xs font-mono text-text-muted uppercase">
-          <span className="text-primary font-bold">///</span>
-          <a className="hover:underline" href="#">Home</a>
-          <span>/</span>
-          <span className="text-text-main font-bold">High-Pressure Solutions</span>
+      <div className="border-b border-border-slate bg-slate-50 dark:bg-zinc-900 px-4 sm:px-6 lg:px-12 py-2 flex items-center justify-between gap-2 min-w-0 overflow-hidden">
+        <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono text-text-muted uppercase min-w-0 flex-shrink">
+          <span className="text-primary font-bold flex-shrink-0">///</span>
+          <Link className="hover:underline truncate" to="/">Home</Link>
+          <span className="flex-shrink-0">/</span>
+          <span className="text-text-main font-bold truncate">Hydraulic Solutions</span>
         </div>
-        <div className="hidden sm:flex items-center gap-4 text-xs font-mono text-text-muted">
-          <span className="flex items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-green-500"></span> SYSTEM STATUS: OPERATIONAL
+        <div className="hidden sm:flex items-center gap-2 lg:gap-4 text-[10px] sm:text-xs font-mono text-text-muted flex-shrink-0">
+          <span className="flex items-center gap-1 whitespace-nowrap">
+            <span className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></span> OPERATIONAL
           </span>
-          <span>UTC: 14:02:45</span>
+          <span className="whitespace-nowrap">UTC: {new Date().toISOString().slice(11, 19)}</span>
         </div>
       </div>
 
       {/* Hero Section: Split Screen Technical */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-border-slate min-h-[500px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-border-slate min-h-[min(500px,80vh)] lg:min-h-[500px]">
         {/* Left: Typography & CTA */}
-        <div className="flex flex-col justify-center p-8 lg:p-16 border-r border-border-slate bg-white dark:bg-background-dark relative overflow-hidden group">
-          {/* Decorative background grid */}
+        <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-16 border-r-0 lg:border-r border-border-slate bg-white dark:bg-background-dark relative overflow-hidden group min-w-0">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none opacity-20"></div>
           
-          <div className="relative z-10">
-            <span className="inline-block py-1 px-2 border border-primary text-primary text-xs font-bold uppercase mb-6 tracking-widest bg-primary/5">
-              Series 700-X
+          <div className="relative z-10 min-w-0">
+            <span className="inline-block py-1 px-2 border border-primary text-primary text-[10px] sm:text-xs font-bold uppercase mb-4 sm:mb-6 tracking-widest bg-primary/5">
+              20+ Years of Experience
             </span>
-            <h2 className="text-5xl lg:text-6xl font-bold uppercase leading-[0.9] tracking-tighter mb-6 text-text-main">
-              High-Pressure <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-800">Hydraulic</span> <br />
-              Solutions
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-[0.95] tracking-tighter mb-4 sm:mb-6 text-text-main break-words">
+              {hero.headline}
             </h2>
+            <p className="text-base sm:text-lg lg:text-xl text-text-muted mb-6 sm:mb-8">{hero.subHeadline}</p>
             
-            <div className="grid grid-cols-2 gap-4 max-w-md mb-8 border-t border-b border-border-slate py-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-md mb-6 sm:mb-8 border-t border-b border-border-slate py-3 sm:py-4">
               <div>
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">Max Pressure</p>
-                <p className="text-xl font-mono font-bold">700 BAR</p>
+                <p className="text-[10px] sm:text-xs text-text-muted uppercase tracking-wider mb-1">Max Pressure</p>
+                <p className="text-lg sm:text-xl font-mono font-bold">700 BAR</p>
               </div>
               <div>
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">Flow Rate</p>
-                <p className="text-xl font-mono font-bold">120 L/MIN</p>
+                <p className="text-[10px] sm:text-xs text-text-muted uppercase tracking-wider mb-1">Flow Rate</p>
+                <p className="text-lg sm:text-xl font-mono font-bold">120 L/MIN</p>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <button className="h-12 px-8 bg-text-main text-white text-sm font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center gap-2">
-                Explore Systems
+            <div className="flex flex-wrap gap-3 sm:gap-4">
+              <Link
+                to="/hydraulic-cylinder"
+                className="min-h-[44px] inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-text-main text-white text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-primary transition-colors"
+              >
+                Explore Products
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </button>
-              <button className="h-12 px-8 border border-border-slate text-text-main hover:border-text-main text-sm font-bold uppercase tracking-widest transition-colors">
+              </Link>
+              <Link
+                to="/contact-us"
+                className="min-h-[44px] inline-flex items-center justify-center px-6 sm:px-8 py-3 border border-border-slate text-text-main hover:border-text-main text-xs sm:text-sm font-bold uppercase tracking-widest transition-colors"
+              >
                 Download Spec Sheet
-              </button>
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* Right: Image */}
-        <div className="relative bg-slate-100 dark:bg-zinc-800 flex items-center justify-center overflow-hidden h-[400px] lg:h-auto">
+        {/* Right: Technical Cutaway Image */}
+        <div className="relative bg-slate-100 dark:bg-zinc-800 flex items-center justify-center overflow-hidden h-[280px] sm:h-[350px] lg:h-auto lg:min-h-[400px] min-w-0">
           <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:20px_20px] opacity-50"></div>
-          
-          {/* Technical Cutaway Image */}
-          <div 
-            className="w-full h-full bg-contain bg-center bg-no-repeat relative z-10 scale-90" 
-            style={{ 
-              backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7IpN5-W0WOuqj9HAabcerWG5-uXD_y9F5b-EtD6U2USkoo7rCDXlevJd8JEIJlaIOM7Lk5XFrPZDesxmKIza9bZdJyOOcSuRYVphOew4phmM0-rpbLhjsccPi0K4H-9afsw9mrX5AcQbf3ipkl8Wh7n2I0W2bXjCYUxSFSr8_OhmsP3MeEzKA3BxdPbTIrCoVkJRmdKcbeAp3cX7eP-OsjzCrwUisLINDpWuHoSfjx6w6oRAVIgxZd4xgfyqmxHm_H6__Rgsw118')",
-              backgroundBlendMode: "multiply"
+          <div
+            className="w-full h-full bg-contain bg-center bg-no-repeat relative z-10 scale-90"
+            style={{
+              backgroundImage: `url('${siteImages.heroTechnicalCutaway}')`,
+              backgroundBlendMode: 'multiply',
             }}
           >
-            {/* Overlay to make the image look more like a render/cutaway */}
             <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
           </div>
-
           {/* Floating specs on image */}
-          <div className="absolute bottom-6 right-6 bg-white/90 dark:bg-black/90 backdrop-blur border border-border-slate p-3 text-xs font-mono shadow-lg">
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white/90 dark:bg-black/90 backdrop-blur border border-border-slate p-2 sm:p-3 text-[10px] sm:text-xs font-mono shadow-lg">
             <div className="flex items-center gap-2 mb-1">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
               <span className="font-bold">LIVE RENDER</span>

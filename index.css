@@ -1,0 +1,54 @@
+/* Prevent horizontal overflow across viewport */
+html, body {
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+/* Responsive technical grid: no overflow on smallest screens, scales to 8K */
+.technical-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  border-top: 1px solid #e2e8f0;
+  border-left: 1px solid #e2e8f0;
+}
+
+.technical-cell {
+  border-right: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  min-width: 0;
+}
+
+.hover-invert:hover {
+  background-color: #1c0d0d;
+  color: #ffffff;
+}
+
+.hover-invert:hover p,
+.hover-invert:hover h3,
+.hover-invert:hover span {
+  color: inherit;
+}
+
+.hover-invert:hover .text-primary {
+  color: #c41e3a !important;
+}
+
+.dark .technical-grid {
+  border-top-color: #27272a;
+  border-left-color: #27272a;
+}
+
+.dark .technical-cell {
+  border-right-color: #27272a;
+  border-bottom-color: #27272a;
+}
+
+.dark .hover-invert:hover {
+  background-color: #1a1a1a;
+}
+
+/* Touch target minimum (44px) for interactive elements */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}

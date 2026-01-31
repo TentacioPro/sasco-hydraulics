@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sasco Hydraulics - Utilitarian Grid</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#ffffff",
+                        "background-dark": "#1a1a1a",
+                        "border-slate": "#e2e8f0",
+                        "text-main": "#1c0d0d",
+                        "text-muted": "#64748b",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["Space Grotesk", "monospace"] /* Using Space Grotesk as requested by theme constraints, styled technically */
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px", 
+                        "sm": "2px",
+                        "lg": "4px", 
+                        "xl": "8px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Space Grotesk", sans-serif;
+        }
+        .technical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            border-top: 1px solid #e2e8f0;
+            border-left: 1px solid #e2e8f0;
+        }
+        .technical-cell {
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .hover-invert:hover {
+            background-color: #1c0d0d;
+            color: #ffffff;
+        }
+        .hover-invert:hover p, .hover-invert:hover h3, .hover-invert:hover span {
+            color: #ffffff;
+        }
+        .hover-invert:hover .text-primary {
+            color: #f20d0d; /* Keep accent red even on dark hover */
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main antialiased min-h-screen flex flex-col">
+<!-- Navbar: Technical & Slim -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-border-slate">
+<div class="max-w-[1440px] mx-auto flex h-16 items-center justify-between px-6 lg:px-12">
+<div class="flex items-center gap-3">
+<div class="bg-primary size-8 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">settings_input_component</span>
+</div>
+<div>
+<h1 class="font-bold text-lg uppercase tracking-tight leading-none">Sasco<span class="text-primary">Hydraulics</span></h1>
+<p class="text-[10px] uppercase tracking-widest text-text-muted">ISO 9001:2015 CERTIFIED</p>
+</div>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-sm font-medium uppercase tracking-wide hover:text-primary transition-colors" href="#">Products</a>
+<a class="text-sm font-medium uppercase tracking-wide hover:text-primary transition-colors" href="#">Systems</a>
+<a class="text-sm font-medium uppercase tracking-wide hover:text-primary transition-colors" href="#">Engineering</a>
+<a class="text-sm font-medium uppercase tracking-wide hover:text-primary transition-colors" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center justify-center h-9 px-4 border border-border-slate hover:border-primary hover:text-primary text-xs font-bold uppercase tracking-wider transition-colors">
+                    Login
+                </button>
+<button class="flex items-center justify-center h-9 px-5 bg-primary text-white text-xs font-bold uppercase tracking-wider hover:bg-red-700 transition-colors">
+                    Request Quote
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto border-x border-border-slate">
+<!-- Breadcrumb / Status Bar -->
+<div class="border-b border-border-slate bg-slate-50 dark:bg-zinc-900 px-6 lg:px-12 py-2 flex items-center justify-between">
+<div class="flex items-center gap-2 text-xs font-mono text-text-muted uppercase">
+<span class="text-primary font-bold">///</span>
+<a class="hover:underline" href="#">Home</a>
+<span>/</span>
+<span class="text-text-main font-bold">High-Pressure Solutions</span>
+</div>
+<div class="hidden sm:flex items-center gap-4 text-xs font-mono text-text-muted">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-500"></span> SYSTEM STATUS: OPERATIONAL</span>
+<span>UTC: 14:02:45</span>
+</div>
+</div>
+<!-- Hero Section: Split Screen Technical -->
+<div class="grid grid-cols-1 lg:grid-cols-2 border-b border-border-slate min-h-[500px]">
+<!-- Left: Typography & CTA -->
+<div class="flex flex-col justify-center p-8 lg:p-16 border-r border-border-slate bg-white dark:bg-background-dark relative overflow-hidden group">
+<!-- Decorative background grid -->
+<div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none opacity-20"></div>
+<div class="relative z-10">
+<span class="inline-block py-1 px-2 border border-primary text-primary text-xs font-bold uppercase mb-6 tracking-widest bg-primary/5">Series 700-X</span>
+<h2 class="text-5xl lg:text-6xl font-bold uppercase leading-[0.9] tracking-tighter mb-6 text-text-main">
+                        High-Pressure <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-800">Hydraulic</span> <br/>
+                        Solutions
+                    </h2>
+<div class="grid grid-cols-2 gap-4 max-w-md mb-8 border-t border-b border-border-slate py-4">
+<div>
+<p class="text-xs text-text-muted uppercase tracking-wider mb-1">Max Pressure</p>
+<p class="text-xl font-mono font-bold">700 BAR</p>
+</div>
+<div>
+<p class="text-xs text-text-muted uppercase tracking-wider mb-1">Flow Rate</p>
+<p class="text-xl font-mono font-bold">120 L/MIN</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="h-12 px-8 bg-text-main text-white text-sm font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center gap-2">
+                            Explore Systems
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="h-12 px-8 border border-border-slate text-text-main hover:border-text-main text-sm font-bold uppercase tracking-widest transition-colors">
+                            Download Spec Sheet
+                        </button>
+</div>
+</div>
+</div>
+<!-- Right: Image -->
+<div class="relative bg-slate-100 dark:bg-zinc-800 flex items-center justify-center overflow-hidden h-[400px] lg:h-auto">
+<div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:20px_20px] opacity-50"></div>
+<!-- Technical Cutaway Image -->
+<div class="w-full h-full bg-contain bg-center bg-no-repeat relative z-10 scale-90" data-alt="Technical cutaway illustration of a heavy-duty hydraulic cylinder showing internal pistons and seals" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7IpN5-W0WOuqj9HAabcerWG5-uXD_y9F5b-EtD6U2USkoo7rCDXlevJd8JEIJlaIOM7Lk5XFrPZDesxmKIza9bZdJyOOcSuRYVphOew4phmM0-rpbLhjsccPi0K4H-9afsw9mrX5AcQbf3ipkl8Wh7n2I0W2bXjCYUxSFSr8_OhmsP3MeEzKA3BxdPbTIrCoVkJRmdKcbeAp3cX7eP-OsjzCrwUisLINDpWuHoSfjx6w6oRAVIgxZd4xgfyqmxHm_H6__Rgsw118'); background-blend-mode: multiply;">
+<!-- Overlay to make the image look more like a render/cutaway -->
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+<!-- Floating specs on image -->
+<div class="absolute bottom-6 right-6 bg-white/90 dark:bg-black/90 backdrop-blur border border-border-slate p-3 text-xs font-mono shadow-lg">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+<span class="font-bold">LIVE RENDER</span>
+</div>
+<div class="text-text-muted">ID: CYL-900-REV2</div>
+</div>
+</div>
+</div>
+<!-- Section Header: Product Schematics -->
+<div class="bg-slate-50 dark:bg-zinc-900 border-b border-border-slate p-6 lg:px-12 flex items-end justify-between">
+<div>
+<h3 class="text-2xl font-bold uppercase tracking-tight">Product Schematics</h3>
+<p class="text-sm text-text-muted mt-1 max-w-lg">Select a component to view detailed engineering specifications and compatibility charts.</p>
+</div>
+<a class="hidden md:flex items-center gap-1 text-sm font-bold uppercase text-primary hover:underline" href="#">
+                View Full Catalog <span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+<!-- Product Grid: Schematic Cards -->
+<div class="technical-grid bg-white dark:bg-background-dark">
+<!-- Product Card 1 -->
+<div class="technical-cell p-0 group hover-invert transition-colors duration-200 cursor-pointer">
+<div class="p-6 h-full flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-mono border border-border-slate px-1 group-hover:border-white/20">REF-01</span>
+<span class="material-symbols-outlined text-border-slate group-hover:text-white">settings_applications</span>
+</div>
+<div class="aspect-[4/3] bg-slate-50 dark:bg-white/5 mb-6 rounded-sm relative overflow-hidden">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat mix-blend-multiply dark:mix-blend-normal opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" data-alt="Wireframe schematic of a Radial Piston Pump" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXoG3-ogqG4FMVtXqjmyqWJiA-BYYE2jBaq7IOZboabF0PiWa2CUWC4bdOns7kJ6oazFxOuE0YPujJI4rO02hY9Fcy036HL_9kaD9UXSPXomVF3XzuRjsh0csnxR0hMzDP45yOCqu10CRNJBmaKcWxX7fdb6lIJ8E_pb9ZWymn1JMqWN6GeZJJomb6rjZHr-Nff0F6tBw-PI9a7YlfO-AdoZ0v39yCKWcWfL7h8zOkyMBXor_XSrEI4HE4UAoV90meEdm8uw71Eqg')"></div>
+</div>
+<h4 class="text-lg font-bold uppercase mb-4 group-hover:text-white">Radial Piston Pump R</h4>
+<div class="mt-auto space-y-2 font-mono text-xs">
+<div class="flex justify-between border-b border-border-slate/50 pb-1 group-hover:border-white/20">
+<span class="text-text-muted group-hover:text-white/60">Pressure</span>
+<span class="font-bold text-primary group-hover:text-primary">700 bar</span>
+</div>
+<div class="flex justify-between border-b border-border-slate/50 pb-1 group-hover:border-white/20">
+<span class="text-text-muted group-hover:text-white/60">Flow</span>
+<span class="font-bold">120 l/min</span>
+</div>
+<div class="flex justify-between pb-1">
+<span class="text-text-muted group-hover:text-white/60">Displacement</span>
+<span class="font-bold">Fixed</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="technical-cell p-0 group hover-invert transition-colors duration-200 cursor-pointer">
+<div class="p-6 h-full flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-mono border border-border-slate px-1 group-hover:border-white/20">REF-02</span>
+<span class="material-symbols-outlined text-border-slate group-hover:text-white">valve</span>
+</div>
+<div class="aspect-[4/3] bg-slate-50 dark:bg-white/5 mb-6 rounded-sm relative overflow-hidden">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat mix-blend-multiply dark:mix-blend-normal opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" data-alt="Technical illustration of a directional seated valve" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTy7feUqRiy_789_nne3Q1mbYpMv70S3HYLH7hDCYk0_H3u-J-L_ehnaIDhDqdq2jUc9I20-TA0kCafUoxUmXvQ7VVFoYeViMhE_ARLYMce0wEXAUj85TSprjNFAvWwOBdKX1YAH5I1Id7qN0MYE_ObvwizfBtjrRV9cBfqmeH8l-e6voeocjHRPpI-iAGzr8POgQtO-JiEOFgCikBqvAy_NmxQwYzZteiZX2wzRRIEZ1V9FWeBvmDyYE27HNW24vtoLTo5Rr1sKI')"></div>
+</div>
+<h4 class="text-lg font-bold uppercase mb-4 group-hover:text-white">Directional Seated Valve</h4>
+<div class="mt-auto space-y-2 font-mono text-xs">
+<div class="flex justify-between border-b border-border-slate/50 pb-1 group-hover:border-white/20">
+<span class="text-text-muted group-hover:text-white/60">Pressure</span>
+<span class="font-bold text-primary group-hover:text-primary">500 bar</span>
+</div>
+<div class="flex justify-between border-b border-border-slate/50 pb-1 group-hover:border-white/20">
+<span class="text-text-muted group-hover:text-white/60">Feature</span>
+<span class="font-bold">Leak-free</span>
+</div>
+<div class="flex justify-between pb-1">
+<span class="text-text-muted group-hover:text-white/60">Actuation</span>
+<span class="font-bold">Solenoid</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="technical-cell p-0 group hover-invert transition-colors duration-200 cursor-pointer">
+<div class="p-6 h-full flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-mono border border-border-slate px-1 group-hover:border-white/20">REF-03</span>
+<span class="material-symbols-outlined text-border-slate group-hover:text-white">swap_driving_apps_wheel</span>
+</div>
+<div class="aspect-[4/3] bg-slate-50 dark:bg-white/5 mb-6 rounded-sm relative overflow-hidden">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat mix-blend-multiply dark:mix-blend-normal opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" data-alt="Schematic rendering of an Axial Piston Pump" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaimBm4UIE9648wHRnUUnb6a3muY9GS-03D23N1Zm5BhPTEzrgCts4pgoAQP5C2NnHqZluldBd_tXrB8D7hgQsTUek5TO3Jjc8A2y12dNlAqMpJm80WA1g-ND6XF_mGv_GyUSL70ky-nXVdmK1QmSV1OaU__119bf3Qfwnqzth8v72E9GAnIlaKNWKaC-IpNN9ZomCECDdM_oAI7rCXYvld-cuGvVbghAarxMC-yHAHEtrLb-Sf11BO0sPEiz8W3JIQ_FSMXEZeW0')"></div>
+</div>
+<h4 class="text-lg font-bold uppercase mb-4 group-hover:text-white">Axial Piston Pump</h4>
+<div class="mt-auto space-y-2 font-mono text-xs">
+<div class="flex justify-between border-b border-border-slate/50 pb-1 group-hover:border-white/20">
+<span class="text-text-muted group-hover:text-white/60">Displacement</span>
+<span class="font-bold text-primary group-hover:text-primary">Variable</span>
+</div>
+<div class="flex justify-between border-b border-border-slate/50 pb-1 group-hover:border-white/20">
+<span class="text-text-muted group-hover:text-white/60">System</span>
+<span class="font-bold">Load Sensing</span>
+</div>
+<div class="flex justify-between pb-1">
+<span class="text-text-muted group-hover:text-white/60">Rating</span>
+<span class="font-bold">Heavy Duty</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="technical-cell p-0 group hover-invert transition-colors duration-200 cursor-pointer">
+<div class="p-6 h-full flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-mono border border-border-slate px-1 group-hover:border-white/20">REF-04</span>
+<span class="material-symbols-outlined text-border-slate group-hover:text-white">bolt</span>
+</div>
+<div class="aspect-[4/3] bg-slate-50 dark:bg-white/5 mb-6 rounded-sm relative overflow-hidden">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat mix-blend-multiply dark:mix-blend-normal opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" data-alt="Compact hydraulic power pack unit diagram" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCE36vYU2q_gLGGmghc-dgCzPuVZi8PkKo3N1bpu4bx_xpbO1fDBSEGRJ7UtK7h5mnXs3IYyO31SWrODN5KtTBFtSeq5LpqimlvuY-HJhuh7gpPU6nj-pidptT7_uy0L1H2Ui0h0yukwTCUY1xjo6WFJ9wEBN8sEj5OL06Yay73wam1gesd0BPnbkjEHMpb3_KDdXb2ajKmL6Q6q-CZkuAhB3TUdat7IFfG8ixtxKbhckBjRhpyWrYKHVZ9sga0UYOMaTSlAxOFhpU')"></div>
+</div>
+<h4 class="text-lg font-bold uppercase mb-4 group-hover:text-white">Compact Power Pack</h4>
+<div class="mt-auto space-y-2 font-mono text-xs">
+<div class="flex justify-between border-b border-border-slate/50 pb-1 group-hover:border-white/20">
+<span class="text-text-muted group-hover:text-white/60">Tank Vol</span>
+<span class="font-bold">30 L</span>
+</div>
+<div class="flex justify-between border-b border-border-slate/50 pb-1 group-hover:border-white/20">
+<span class="text-text-muted group-hover:text-white/60">Pressure</span>
+<span class="font-bold text-primary group-hover:text-primary">700 bar</span>
+</div>
+<div class="flex justify-between pb-1">
+<span class="text-text-muted group-hover:text-white/60">Type</span>
+<span class="font-bold">Submerged</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Documentation Block & Form -->
+<div class="grid grid-cols-1 md:grid-cols-2 border-t border-border-slate">
+<!-- Documentation Left -->
+<div class="bg-slate-100 dark:bg-zinc-800 p-8 lg:p-12 border-b md:border-b-0 md:border-r border-border-slate">
+<div class="flex flex-col h-full justify-between gap-8">
+<div>
+<span class="material-symbols-outlined text-4xl mb-4 text-primary">description</span>
+<h3 class="text-3xl font-bold uppercase tracking-tight mb-2">Technical<br/>Documentation</h3>
+<p class="text-text-muted max-w-sm">Access CAD files, detailed performance curves, and installation manuals for the Series 700-X.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<a class="flex items-center gap-3 p-3 bg-white dark:bg-background-dark border border-border-slate hover:border-primary group transition-colors" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">download</span>
+<div class="flex flex-col">
+<span class="text-xs font-bold uppercase">Datasheet</span>
+<span class="text-[10px] text-text-muted">PDF - 2.4MB</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-3 bg-white dark:bg-background-dark border border-border-slate hover:border-primary group transition-colors" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">3d_rotation</span>
+<div class="flex flex-col">
+<span class="text-xs font-bold uppercase">CAD Model</span>
+<span class="text-[10px] text-text-muted">STEP - 14MB</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- OTP Form Right -->
+<div class="bg-text-main dark:bg-black text-white p-8 lg:p-12">
+<div class="h-full flex flex-col justify-center max-w-md mx-auto">
+<div class="mb-6">
+<h4 class="text-xl font-bold uppercase tracking-wider mb-1 flex items-center gap-2">
+<span class="w-2 h-2 bg-primary"></span>
+                            Secure Access
+                        </h4>
+<p class="text-sm text-gray-400 font-mono">Enter corporate email to retrieve access code.</p>
+</div>
+<!-- 2-Step Form Simulation -->
+<div class="space-y-4">
+<div class="relative group">
+<label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1 font-mono">Step 1: Identification</label>
+<div class="flex">
+<span class="inline-flex items-center px-3 border border-r-0 border-gray-700 bg-gray-900 text-gray-400 font-mono text-sm">&gt;_</span>
+<input class="block w-full bg-transparent border border-gray-700 text-white p-3 font-mono text-sm focus:outline-none focus:border-primary focus:ring-0 placeholder-gray-600 transition-colors" placeholder="user@company.com" type="email"/>
+</div>
+</div>
+<div class="relative group opacity-50 pointer-events-none">
+<label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1 font-mono">Step 2: Verification</label>
+<div class="flex gap-2">
+<input class="w-12 h-12 text-center bg-gray-900 border border-gray-700 text-white font-mono text-lg focus:outline-none focus:border-primary" maxlength="1" placeholder="X" type="text"/>
+<input class="w-12 h-12 text-center bg-gray-900 border border-gray-700 text-white font-mono text-lg focus:outline-none focus:border-primary" maxlength="1" placeholder="X" type="text"/>
+<input class="w-12 h-12 text-center bg-gray-900 border border-gray-700 text-white font-mono text-lg focus:outline-none focus:border-primary" maxlength="1" placeholder="X" type="text"/>
+<input class="w-12 h-12 text-center bg-gray-900 border border-gray-700 text-white font-mono text-lg focus:outline-none focus:border-primary" maxlength="1" placeholder="X" type="text"/>
+<button class="flex-1 bg-gray-800 text-gray-500 font-bold text-sm uppercase tracking-wider">Verify</button>
+</div>
+</div>
+<button class="w-full mt-4 bg-primary hover:bg-red-600 text-white font-bold h-10 uppercase tracking-widest text-sm transition-colors">
+                            Initiate Request
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-border-slate py-8">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-bold uppercase tracking-wider">Sasco Hydraulics GmbH</span>
+<span class="text-xs text-text-muted font-mono">Industriestraße 45, 80339 Munich, DE</span>
+</div>
+<div class="flex gap-6 text-xs font-medium uppercase tracking-wide text-text-muted">
+<a class="hover:text-primary" href="#">Imprint</a>
+<a class="hover:text-primary" href="#">Privacy</a>
+<a class="hover:text-primary" href="#">Terms of Sale</a>
+<a class="hover:text-primary" href="#">Sitemap</a>
+</div>
+<div class="text-[10px] text-text-muted font-mono">
+                    © 2024 SASCO. ALL RIGHTS RESERVED.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>
