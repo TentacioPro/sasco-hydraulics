@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import SubPage from './pages/SubPage';
 import ContactPage from './pages/ContactPage';
 import GalleryPage from './pages/GalleryPage';
+import ProductGalleryPage from './pages/ProductGalleryPage';
 import { siteContent } from './src/data/content';
 
 const App: React.FC = () => {
@@ -13,7 +14,7 @@ const App: React.FC = () => {
     <div className="flex flex-col min-h-screen w-full font-sans min-w-0 overflow-x-hidden">
       <Navbar />
       
-      <main className="flex-grow w-full max-w-[1440px] mx-auto border-x-0 sm:border-x border-border-slate min-w-0 overflow-x-hidden">
+      <main className="flex-grow w-full border-x-0 sm:border-x border-border-slate min-w-0 overflow-x-hidden">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<SubPage page={siteContent.about} />} />
@@ -22,6 +23,7 @@ const App: React.FC = () => {
           <Route path="/hydraulic-components" element={<SubPage page={siteContent.components} />} />
           <Route path="/services" element={<SubPage page={siteContent.services} />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/products/gallery" element={<ProductGalleryPage />} />
           <Route path="/contact-us" element={<ContactPage />} />
         </Routes>
       </main>

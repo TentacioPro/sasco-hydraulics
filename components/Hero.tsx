@@ -8,25 +8,25 @@ const Hero: React.FC = () => {
   return (
     <>
       {/* Breadcrumb / Status Bar */}
-      <div className="border-b border-border-slate bg-slate-50 dark:bg-zinc-900 px-4 sm:px-6 lg:px-12 py-2 flex items-center justify-between gap-2 min-w-0 overflow-hidden">
-        <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono text-text-muted uppercase min-w-0 flex-shrink">
+      <div className="border-b border-border-slate bg-slate-50 dark:bg-zinc-900 px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24 py-2 flex items-center justify-between gap-2 min-w-0 overflow-hidden">
+        <div className="flex items-center gap-2 text-[10px] sm:text-xs lg:text-sm font-mono text-text-muted uppercase min-w-0 flex-shrink">
           <span className="text-primary font-bold flex-shrink-0">///</span>
           <Link className="hover:underline truncate" to="/">Home</Link>
           <span className="flex-shrink-0">/</span>
           <span className="text-text-main font-bold truncate">Hydraulic Solutions</span>
         </div>
-        <div className="hidden sm:flex items-center gap-2 lg:gap-4 text-[10px] sm:text-xs font-mono text-text-muted flex-shrink-0">
+        <div className="hidden sm:flex items-center gap-2 lg:gap-4 xl:gap-6 text-[10px] sm:text-xs lg:text-sm font-mono text-text-muted flex-shrink-0">
           <span className="flex items-center gap-1 whitespace-nowrap">
-            <span className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></span> OPERATIONAL
+            <span className="w-2 h-2 xl:w-2.5 xl:h-2.5 rounded-full bg-green-500 flex-shrink-0"></span> OPERATIONAL
           </span>
           <span className="whitespace-nowrap">UTC: {new Date().toISOString().slice(11, 19)}</span>
         </div>
       </div>
 
       {/* Hero Section: Split Screen Technical */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-border-slate min-h-[min(500px,80vh)] lg:min-h-[500px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-border-slate min-h-[min(500px,80vh)] lg:min-h-[500px] xl:min-h-[600px] 2xl:min-h-[700px]">
         {/* Left: Typography & CTA */}
-        <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-16 border-r-0 lg:border-r border-border-slate bg-white dark:bg-background-dark relative overflow-hidden group min-w-0">
+        <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-16 xl:p-20 2xl:p-28 border-r-0 lg:border-r border-border-slate bg-white dark:bg-background-dark relative overflow-hidden group min-w-0">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none opacity-20"></div>
           
           <div className="relative z-10 min-w-0">
@@ -79,14 +79,7 @@ const Hero: React.FC = () => {
           >
             <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
           </div>
-          {/* Floating specs on image */}
-          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white/90 dark:bg-black/90 backdrop-blur border border-border-slate p-2 sm:p-3 text-[10px] sm:text-xs font-mono shadow-lg">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-              <span className="font-bold">LIVE RENDER</span>
-            </div>
-            <div className="text-text-muted">ID: CYL-900-REV2</div>
-          </div>
+
         </div>
       </div>
     </>

@@ -33,14 +33,14 @@ const BrochureDownload: React.FC = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 border-t border-border-slate min-w-0 overflow-hidden">
       {/* Documentation Left */}
-      <div className="bg-slate-100 dark:bg-zinc-800 p-6 sm:p-8 lg:p-12 border-b md:border-b-0 md:border-r border-border-slate min-w-0">
-        <div className="flex flex-col h-full justify-between gap-6 sm:gap-8">
+      <div className="bg-slate-100 dark:bg-zinc-800 p-6 sm:p-8 lg:p-12 xl:p-16 2xl:p-20 border-b md:border-b-0 md:border-r border-border-slate min-w-0">
+        <div className="flex flex-col h-full justify-between gap-6 sm:gap-8 xl:gap-10">
           <div className="min-w-0">
-            <span className="material-symbols-outlined text-3xl sm:text-4xl mb-4 text-primary block">description</span>
-            <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight mb-2">Technical<br />Documentation</h3>
-            <p className="text-xs sm:text-sm text-text-muted max-w-sm">Access product specifications, performance data, and installation guides for our hydraulic cylinders, systems, and components.</p>
+            <span className="material-symbols-outlined text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mb-4 xl:mb-6 text-primary block">description</span>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold uppercase tracking-tight mb-2 xl:mb-4">Technical<br />Documentation</h3>
+            <p className="text-xs sm:text-sm lg:text-base xl:text-lg text-text-muted max-w-sm xl:max-w-md 2xl:max-w-lg">Access product specifications, performance data, and installation guides for our hydraulic cylinders, systems, and components.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 xl:gap-6">
             <a
               href={`mailto:${siteContent.contact.emails[0]}?subject=Datasheet%20Request`}
               className="flex items-center gap-3 p-3 bg-white dark:bg-background-dark border border-border-slate hover:border-primary group transition-colors min-h-[44px]"

@@ -10,11 +10,14 @@ const Navbar: React.FC = () => {
   const navLinks = (
     <>
       <div className="relative group">
-        <span className="text-sm font-medium uppercase tracking-wide hover:text-primary transition-colors cursor-pointer py-2 block">
+        <Link 
+          to="/products/gallery"
+          className="text-sm font-medium uppercase tracking-wide hover:text-primary transition-colors py-2 block"
+        >
           Products
-        </span>
-        <div className="absolute top-full left-0 -mt-px pt-1 hidden group-hover:block z-50 lg:group-hover:block">
-          <div className="bg-white dark:bg-background-dark border border-border-slate py-2 min-w-[200px] shadow-lg">
+        </Link>
+        <div className="absolute top-full left-0 mt-0 pt-2 hidden group-hover:block z-[60]">
+          <div className="bg-white dark:bg-background-dark border border-border-slate py-2 min-w-[240px] shadow-2xl">
             {products.map((p, idx) => (
               <Link
                 key={idx}
@@ -25,6 +28,17 @@ const Navbar: React.FC = () => {
                 {p.name}
               </Link>
             ))}
+            {/* Divider */}
+            <div className="border-t border-border-slate my-1"></div>
+            {/* Gallery link */}
+            <Link
+              to="/products/gallery"
+              onClick={() => setMobileOpen(false)}
+              className="block px-4 py-3 text-sm font-medium uppercase tracking-wide hover:bg-slate-50 dark:hover:bg-zinc-800 hover:text-primary touch-target flex items-center gap-2"
+            >
+              <span className="material-symbols-outlined text-sm">photo_library</span>
+              Product Gallery
+            </Link>
           </div>
         </div>
       </div>
@@ -34,26 +48,29 @@ const Navbar: React.FC = () => {
       <Link className="text-sm font-medium uppercase tracking-wide hover:text-primary transition-colors py-2 block" to="/services" onClick={() => setMobileOpen(false)}>
         Engineering
       </Link>
+      <Link className="text-sm font-medium uppercase tracking-wide hover:text-primary transition-colors py-2 block" to="/about-us" onClick={() => setMobileOpen(false)}>
+        About Us
+      </Link>
       <Link className="text-sm font-medium uppercase tracking-wide hover:text-primary transition-colors py-2 block" to="/contact-us" onClick={() => setMobileOpen(false)}>
-        Support
+        Contact
       </Link>
     </>
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-border-slate overflow-hidden">
-      <div className="max-w-[1440px] mx-auto flex h-14 sm:h-16 items-center justify-between px-4 sm:px-6 lg:px-12 min-w-0">
+    <header className="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-border-slate">
+      <div className="mx-auto flex h-14 sm:h-16 lg:h-18 xl:h-20 items-center justify-between px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24 min-w-0">
         {/* Brand - Logo routes to home */}
         <Link to="/" className="flex items-center min-w-0 flex-shrink-0">
           <img
             src={logo}
             alt="Sasco Hydraulics"
-            className="h-8 sm:h-10 w-auto object-contain"
+            className="h-8 sm:h-10 lg:h-12 xl:h-14 w-auto object-contain"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6 lg:gap-8 items-center flex-shrink-0">
+        <nav className="hidden md:flex gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 items-center flex-shrink-0 text-sm lg:text-base">
           {navLinks}
         </nav>
 
@@ -98,6 +115,14 @@ const Navbar: React.FC = () => {
                 {p.name}
               </Link>
             ))}
+            <Link
+              to="/products/gallery"
+              onClick={() => setMobileOpen(false)}
+              className="block px-4 py-3 text-sm font-medium uppercase tracking-wide hover:bg-white dark:hover:bg-zinc-800 hover:text-primary border-l-2 border-transparent hover:border-primary touch-target flex items-center gap-2"
+            >
+              <span className="material-symbols-outlined text-sm">photo_library</span>
+              Product Gallery
+            </Link>
           </div>
           <Link to="/hydraulic-systems" onClick={() => setMobileOpen(false)} className="block px-4 py-3 text-sm font-medium uppercase tracking-wide hover:bg-white dark:hover:bg-zinc-800 hover:text-primary border-l-2 border-transparent hover:border-primary touch-target">
             Systems
@@ -105,8 +130,11 @@ const Navbar: React.FC = () => {
           <Link to="/services" onClick={() => setMobileOpen(false)} className="block px-4 py-3 text-sm font-medium uppercase tracking-wide hover:bg-white dark:hover:bg-zinc-800 hover:text-primary border-l-2 border-transparent hover:border-primary touch-target">
             Engineering
           </Link>
+          <Link to="/about-us" onClick={() => setMobileOpen(false)} className="block px-4 py-3 text-sm font-medium uppercase tracking-wide hover:bg-white dark:hover:bg-zinc-800 hover:text-primary border-l-2 border-transparent hover:border-primary touch-target">
+            About Us
+          </Link>
           <Link to="/contact-us" onClick={() => setMobileOpen(false)} className="block px-4 py-3 text-sm font-medium uppercase tracking-wide hover:bg-white dark:hover:bg-zinc-800 hover:text-primary border-l-2 border-transparent hover:border-primary touch-target">
-            Support
+            Contact
           </Link>
           <Link
             to="/contact-us"

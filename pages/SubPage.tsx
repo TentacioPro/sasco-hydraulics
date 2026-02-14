@@ -11,8 +11,8 @@ const SubPage: React.FC<SubPageProps> = ({ page }) => {
   return (
     <>
       {/* Breadcrumb */}
-      <div className="border-b border-border-slate bg-slate-50 dark:bg-zinc-900 px-4 sm:px-6 lg:px-12 py-2 flex items-center justify-between min-w-0 overflow-hidden">
-        <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono text-text-muted uppercase min-w-0 flex-shrink">
+      <div className="border-b border-border-slate bg-slate-50 dark:bg-zinc-900 px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24 py-2 flex items-center justify-between min-w-0 overflow-hidden">
+        <div className="flex items-center gap-2 text-[10px] sm:text-xs lg:text-sm font-mono text-text-muted uppercase min-w-0 flex-shrink">
           <span className="text-primary font-bold flex-shrink-0">///</span>
           <Link className="hover:underline truncate" to="/">Home</Link>
           <span className="flex-shrink-0">/</span>
@@ -21,15 +21,15 @@ const SubPage: React.FC<SubPageProps> = ({ page }) => {
       </div>
 
       {/* Page Header */}
-      <div className="border-b border-border-slate p-6 sm:p-8 lg:p-16 bg-white dark:bg-background-dark min-w-0 overflow-hidden">
+      <div className="border-b border-border-slate p-6 sm:p-8 lg:p-16 xl:p-20 2xl:p-24 bg-white dark:bg-background-dark min-w-0 overflow-hidden">
         <div className="relative overflow-hidden group">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none opacity-20"></div>
           <div className="relative z-10 min-w-0">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase leading-tight tracking-tighter mb-4 text-text-main break-words">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold uppercase leading-tight tracking-tighter mb-4 xl:mb-6 text-text-main break-words">
               {page.title}
             </h1>
             {page.intro && (
-              <p className="text-text-muted max-w-3xl text-xs sm:text-sm leading-relaxed">{page.intro}</p>
+              <p className="text-text-muted max-w-3xl xl:max-w-4xl 2xl:max-w-5xl text-xs sm:text-sm lg:text-base xl:text-lg leading-relaxed">{page.intro}</p>
             )}
           </div>
         </div>
@@ -37,8 +37,8 @@ const SubPage: React.FC<SubPageProps> = ({ page }) => {
 
       {/* Content Sections */}
       {page.content && page.content.length > 0 && (
-        <div className="border-b border-border-slate p-6 sm:p-8 lg:p-16 bg-slate-50 dark:bg-zinc-900 min-w-0 overflow-hidden">
-          <div className="space-y-4 sm:space-y-6 max-w-3xl">
+        <div className="border-b border-border-slate p-6 sm:p-8 lg:p-16 xl:p-20 2xl:p-24 bg-slate-50 dark:bg-zinc-900 min-w-0 overflow-hidden">
+          <div className="space-y-4 sm:space-y-6 xl:space-y-8 max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
             {page.content.map((paragraph, idx) => (
               <p key={idx} className="text-text-muted text-xs sm:text-sm leading-relaxed">{paragraph}</p>
             ))}
